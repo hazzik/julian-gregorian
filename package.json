@@ -1,6 +1,6 @@
 {
   "name": "julian-gregorian",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Convert between julian and gregorian calendar",
   "main": "dist/index.js",
   "scripts": {
