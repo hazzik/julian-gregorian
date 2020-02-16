@@ -26,7 +26,7 @@ export default class CalendarConverter {
             year += 1;
         }
 
-        return `${year}-${month}-${day}`;
+        return `${day} ${month} ${year}`;
     }
 
     /**
@@ -54,7 +54,7 @@ export default class CalendarConverter {
             year -= 1;
         }
 
-        return `${year}-${month}-${day}`;
+        return `${day} ${month} ${year}`;
     }
 
     /**
