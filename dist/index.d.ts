@@ -10,7 +10,15 @@ export default class CalendarConverter {
      * @param {number} day
      * @returns {string}
      */
-    static fromJulianToGregorian(year: number, month: number, day: number): string;
+    static fromJulianToGregorian({ year, month, day }: {
+        year: number;
+        month: number;
+        day: number;
+    }): {
+        year: number;
+        month: number;
+        day: number;
+    };
     /**
      * Convert a gregorian calendar date to a julian calendar date
      * calculation based on https://de.wikipedia.org/wiki/Umrechnung_zwischen_julianischem_und_gregorianischem_Kalender
@@ -19,7 +27,15 @@ export default class CalendarConverter {
      * @param {number} day
      * @returns {string}
      */
-    static fromGregorianToJulian(year: number, month: number, day: number): string;
+    static fromGregorianToJulian({ year, month, day }: {
+        year: number;
+        month: number;
+        day: number;
+    }): {
+        year: number;
+        month: number;
+        day: number;
+    };
     /**
      * Calculate the day difference between the two calendar
      * @param {number} year

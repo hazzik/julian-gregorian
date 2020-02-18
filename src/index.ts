@@ -10,14 +10,14 @@ export default class CalendarConverter {
      * @param {number} day
      * @returns {string}
      */
-    public static fromJulianToGregorian(year: number, month: number, day: number): string {
+    public static fromJulianToGregorian({ year, month, day }: { year: number; month: number; day: number; }): { year: number; month: number; day: number; } {
         const td = CalendarConverter.dayDifference(year, month);
         day = day + td;
 
         // check end of the month
-        if (day > this.daysInMonthGregorian(month, year)) {
+        if (day > CalendarConverter.daysInMonthGregorian(month, year)) {
             month += 1;
-            day = day - this.daysInMonthGregorian(month - 1, year);
+            day = day - CalendarConverter.daysInMonthGregorian(month - 1, year);
         }
 
         // check end of the year
@@ -26,7 +26,7 @@ export default class CalendarConverter {
             year += 1;
         }
 
-        return `${day} ${month} ${year}`;
+        return { year, month, day };
     }
 
     /**
@@ -37,7 +37,7 @@ export default class CalendarConverter {
      * @param {number} day
      * @returns {string}
      */
-    public static fromGregorianToJulian(year: number, month: number, day: number): string {
+    public static fromGregorianToJulian({ year, month, day }: { year: number; month: number; day: number; }): { year: number; month: number; day: number; } {
         const td = CalendarConverter.dayDifference(year, month);
         day =   day - td;
 
@@ -45,7 +45,7 @@ export default class CalendarConverter {
         if (day <= 0) {
             month -= 1;
             // we need julian schaltjahresregel
-            day = day + this.daysInMonthJulian(month, year);
+            day = day + CalendarConverter.daysInMonthJulian(month, year);
         }
 
         // check end of the year
@@ -54,7 +54,7 @@ export default class CalendarConverter {
             year -= 1;
         }
 
-        return `${day} ${month} ${year}`;
+        return { year, month, day };
     }
 
     /**
@@ -63,7 +63,7 @@ export default class CalendarConverter {
      * @param {number} month
      * @returns {number}
      */
-    private static dayDifference(year: number, month: number) {
+    private static dayDifference(year: number, month: number): number {
         // check if we are in january or february
         if (month < 3) {
             // substract one year
@@ -76,7 +76,6 @@ export default class CalendarConverter {
         const b = jh % 4;
         // day difference
         return 3 * a + b - 2;
-
     }
 
     /**
