@@ -1,10 +1,12 @@
 {
-  "name": "julian-gregorian",
+  "name": "@hazzik/julian-gregorian",
   "version": "1.0.0",
-  "description": "Convert between julian and gregorian calendar",
+  "description": "Convert dates between Julian and Gregorian calendars",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/hazzik/julian-gregorian",
   "scripts": {
+    "prepare": "tsc",
     "test": "mocha -r ts-node/register test/**/*.spec.ts",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "build": "tsc"
@@ -24,5 +26,8 @@
   "maintainers": [
     "hazzik"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "dist"
+  ]
 }
