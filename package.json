@@ -1,6 +1,6 @@
 {
-  "name": "@hazzik/julian-gregorian",
-  "version": "1.0.0",
+  "name": "@the_hazzik/julian-gregorian-converter",
+  "version": "1.0.1",
   "description": "Convert dates between Julian and Gregorian calendars",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
