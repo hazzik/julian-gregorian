@@ -1,3 +1,9 @@
+interface IDate {
+    year: number;
+    month: number;
+    day: number;
+}
+
 /**
  * This class can transform calendar dates between julian and gregorian calendar
  */
@@ -10,7 +16,7 @@ export default class CalendarConverter {
      * @param {number} day
      * @returns {string}
      */
-    public static fromJulianToGregorian({ year, month, day }: { year: number; month: number; day: number; }): { year: number; month: number; day: number; } {
+    public static fromJulianToGregorian({ year, month, day }: IDate): IDate {
         const td = CalendarConverter.dayDifference(year, month);
         day = day + td;
 
@@ -37,7 +43,7 @@ export default class CalendarConverter {
      * @param {number} day
      * @returns {string}
      */
-    public static fromGregorianToJulian({ year, month, day }: { year: number; month: number; day: number; }): { year: number; month: number; day: number; } {
+    public static fromGregorianToJulian({ year, month, day }: IDate): IDate {
         const td = CalendarConverter.dayDifference(year, month);
         day =   day - td;
 
