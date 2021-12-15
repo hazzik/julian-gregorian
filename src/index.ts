@@ -21,9 +21,10 @@ export default class CalendarConverter {
         day = day + td;
 
         // check end of the month
-        if (day > CalendarConverter.daysInMonthGregorian(month, year)) {
+        let daysInMonth = CalendarConverter.daysInMonthGregorian(month, year);
+        if (day > daysInMonth) {
             month += 1;
-            day = day - CalendarConverter.daysInMonthGregorian(month - 1, year);
+            day -= daysInMonth;
         }
 
         // check end of the year
@@ -50,7 +51,7 @@ export default class CalendarConverter {
         // check end of the month
         if (day <= 0) {
             month -= 1;
-            // we need julian schaltjahresregel
+            // we need julian leap year
             day = day + CalendarConverter.daysInMonthJulian(month, year);
         }
 
@@ -72,7 +73,7 @@ export default class CalendarConverter {
     private static dayDifference(year: number, month: number): number {
         // check if we are in january or february
         if (month < 3) {
-            // substract one year
+            // subtract one year
             year -= 1;
         }
 
@@ -101,12 +102,11 @@ export default class CalendarConverter {
      * @returns {number}
      */
     private static daysInMonthJulian(month: number, year: number): number {
-        // julian schaltjahrregel
-        if (month === 2) {
-            if (year % 4 === 0) {
-                return 29;
-            }
+        // julian leap year
+        if (month === 2 && year % 4 === 0) {
+            return 29;
         }
+        
         // default month rule
         return new Date(year, month, 0).getDate();
     }
