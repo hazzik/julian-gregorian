@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "repository": "https://github.com/tobinski/julian-gregorian",
   "scripts": {
-    "test": "node_modules/.bin/mocha -r ts-node/register test/**/*.spec.ts",
-    "lint": "node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'",
-    "build": "node_modules/.bin/tsc"
+    "test": "mocha -r ts-node/register test/**/*.spec.ts",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "build": "tsc"
   },
   "devDependencies": {
     "source-map": "^0.7.3",
@@ -21,5 +21,5 @@
     "mocha": "5.2"
   },
   "author": "tobinski",
-  "license": "ISC"
+  "license": "MIT"
 }

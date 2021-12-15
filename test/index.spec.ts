@@ -14,20 +14,20 @@ describe('Test calendar conversion', () => {
      * https://keisan.casio.com/exec/system/1227757509
      */
     it('Convert from gregorian calendar date to julian calendar date', (done) => {
-        CalendarConverter.fromGregorianToJulian(2018,8,9).should.be.eq('2018-7-27');
-        // this depends on the country. The change of the year was different in different areas. 2017-01-20 may also be rigjt
-        CalendarConverter.fromGregorianToJulian(2018,2,2).should.be.eq('2018-1-20');
-        CalendarConverter.fromGregorianToJulian(1300,12,28).should.be.eq('1300-12-20');
-        CalendarConverter.fromGregorianToJulian(1300,1,1).should.be.eq('1299-12-25');
+        CalendarConverter.fromGregorianToJulian({year:2018, month: 8, day: 9}).should.be.eql({ year: 2018, month: 7, day: 27 });
+        // this depends on the country. The change of the year was different in different areas. 2017-01-20 may also be right
+        CalendarConverter.fromGregorianToJulian({year:2018, month: 2, day: 2}).should.be.eql({ year: 2018, month: 1, day: 20 });
+        CalendarConverter.fromGregorianToJulian({year:1300, month:12, day:28}).should.be.eql({ year: 1300, month: 12, day: 20 });
+        CalendarConverter.fromGregorianToJulian({year:1300, month: 1, day: 1}).should.be.eql({ year: 1299, month: 12, day: 25 });
         done();
     });
 
     it('Convert from julian calendar date to gregorian calendar date', (done) => {
-        CalendarConverter.fromJulianToGregorian(1501,1,1).should.be.eq('1501-1-11');
-        // this depends on the country. The change of the year was different in different areas. 2017-01-20 may also be rigjt
-        CalendarConverter.fromJulianToGregorian(1825,10,29).should.be.eq('1825-11-10');
-        CalendarConverter.fromJulianToGregorian(1899,12,23).should.be.eq('1900-1-4');
-        CalendarConverter.fromJulianToGregorian(1900,2,16).should.be.eq('1900-2-28');
+        CalendarConverter.fromJulianToGregorian({year:1501, month: 1, day: 1}).should.be.eql({ year: 1501, month: 1, day: 11 });
+        // this depends on the country. The change of the year was different in different areas. 2017-01-20 may also be right
+        CalendarConverter.fromJulianToGregorian({year:1825, month:10, day:29}).should.be.eql({ year: 1825, month: 11, day: 10 });
+        CalendarConverter.fromJulianToGregorian({year:1899, month:12, day:23}).should.be.eql({ year: 1900, month: 1, day: 4 });
+        CalendarConverter.fromJulianToGregorian({year:1900, month: 2, day:16}).should.be.eql({ year: 1900, month: 2, day: 28 });
         done();
     });
 });
