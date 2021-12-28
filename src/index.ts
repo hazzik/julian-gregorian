@@ -1,5 +1,5 @@
 import { Calendar } from "./calendar";
-import { ICalendarDate } from "./calendarDate";
+import { CalendarDate } from "./calendarDate";
 
 /**
  * This class can transform calendar dates between julian and gregorian calendar
@@ -10,7 +10,7 @@ export default class CalendarConverter {
      * calculation based on https://de.wikipedia.org/wiki/Umrechnung_zwischen_julianischem_und_gregorianischem_Kalender
      * @returns {string}
      */
-    public static fromJulianToGregorian(date: ICalendarDate): ICalendarDate {
+    public static fromJulianToGregorian(date: CalendarDate): CalendarDate {
         const td = CalendarConverter.dayDifference(date.year, date.month);
         return Calendar.Gregorian.addDays(date, td);
     }
@@ -21,7 +21,7 @@ export default class CalendarConverter {
      * @returns {string}
      * @param date
      */
-    public static fromGregorianToJulian(date: ICalendarDate): ICalendarDate {
+    public static fromGregorianToJulian(date: CalendarDate): CalendarDate {
         const td = CalendarConverter.dayDifference(date.year, date.month);
         return Calendar.Julian.addDays(date, -td);
     }

@@ -1,4 +1,4 @@
-﻿import { ICalendarDate } from "./calendarDate";
+﻿import { CalendarDate } from "./calendarDate";
 
 export abstract class Calendar {
     public static Julian = new (class extends Calendar {
@@ -23,7 +23,7 @@ export abstract class Calendar {
         return [31, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
     }
 
-    public addDays(date: ICalendarDate, days: number): ICalendarDate {
+    public addDays(date: CalendarDate, days: number): CalendarDate {
         let newDay = date.day + days;
         let newMonth = date.month;
         let newYear = date.year;
