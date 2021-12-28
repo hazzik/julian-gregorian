@@ -1,17 +1,17 @@
-﻿import {ICalendarDate} from "./calendarDate";
+﻿import { ICalendarDate } from "./calendarDate";
 
 export abstract class Calendar {
-    public static Julian = new class extends Calendar {
+    public static Julian = new (class extends Calendar {
         public isLeapYear(year: number): boolean {
             return year % 4 === 0;
         }
-    };
+    })();
 
-    public static Gregorian = new class extends Calendar {
+    public static Gregorian = new (class extends Calendar {
         public isLeapYear(year: number): boolean {
-            return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+            return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
         }
-    };
+    })();
 
     public abstract isLeapYear(year: number): boolean;
 
@@ -47,6 +47,6 @@ export abstract class Calendar {
             }
         }
 
-        return {year: newYear, month: newMonth, day: newDay};
+        return { year: newYear, month: newMonth, day: newDay };
     }
 }

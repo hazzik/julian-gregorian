@@ -1,5 +1,5 @@
-import {Calendar} from "./calendar";
-import {ICalendarDate} from "./calendarDate";
+import { Calendar } from "./calendar";
+import { ICalendarDate } from "./calendarDate";
 
 /**
  * This class can transform calendar dates between julian and gregorian calendar
