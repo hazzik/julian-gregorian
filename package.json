@@ -4,7 +4,10 @@
   "description": "Convert dates between Julian and Gregorian calendars",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/hazzik/julian-gregorian",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazzik/julian-gregorian.git"
+  },
   "scripts": {
     "prepare": "tsc",
     "test": "mocha -r ts-node/register test/**/*.spec.ts",
@@ -31,5 +34,20 @@
   "license": "MIT",
   "files": [
     "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/hazzik/julian-gregorian/issues"
+  },
+  "homepage": "https://github.com/hazzik/julian-gregorian#readme",
+  "keywords": [
+    "date",
+    "calendar",
+    "julian calendar",
+    "gregorian calendar",
+    "date converter",
+    "date conversion",
+    "gregorian to julian",
+    "julian to gregorian",
+    "old style date"
   ]
 }
