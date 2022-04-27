@@ -8,6 +8,7 @@
     "type": "git",
     "url": "git+https://github.com/hazzik/julian-gregorian.git"
   },
+  "funding": "https://github.com/hazzik/julian-gregorian?sponsor=1",
   "scripts": {
     "prepare": "tsc",
     "test": "mocha -r ts-node/register test/**/*.spec.ts",
