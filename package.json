@@ -17,7 +17,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/chai": "^4.3.0",
+    "@types/chai": "^5.0.0",
     "@types/mocha": "^10.0.0",
     "@types/node": "^16.11.13",
     "chai": "^4.3.4",
